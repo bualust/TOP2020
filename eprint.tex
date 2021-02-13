@@ -1,0 +1,210 @@
+%  sample eprint article in LaTeX           --- M. Peskin, 9/7/00
+
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% basic data for the eprint:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textwidth=6.0in  \textheight=8.25in
+
+%%  Adjust these for your printer:
+\leftmargin=-0.3in   \topmargin=-0.20in
+
+%% preprint number data:
+\newcommand\pubnumber{SNSN-323-63}
+\newcommand\pubdate{\today}
+
+%%  address and funding acknowledgement data:
+\def\institute{Department of Physics and Astronomy\\ University of Manchester}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   document style macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Title#1{\begin{center} {\Large #1 } \end{center}}
+\def\Author#1{\begin{center}{ \sc #1} \end{center}}
+\def\Address#1{\begin{center}{ \it #1} \end{center}}
+\def\andauth{\begin{center}{and} \end{center}}
+\def\submit#1{\begin{center}Submitted to {\sl #1} \end{center}}
+\newcommand\pubblock{\rightline{\begin{tabular}{l} \pubnumber\\
+         \pubdate  \end{tabular}}}
+\newenvironment{Abstract}{\begin{quotation}  }{\end{quotation}}
+\newenvironment{Presented}{\begin{quotation} \begin{center} 
+             PRESENTED AT\end{center}\bigskip 
+      \begin{center}\begin{large}}{\end{large}\end{center} \end{quotation}}
+\def\Acknowledgements{\bigskip  \bigskip \begin{center} \begin{large}
+             \bf ACKNOWLEDGEMENTS \end{large}\end{center}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  personal abbreviations and macros
+%    the following package contains macros used in this document:
+\input econfmacros.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{titlepage}
+\pubblock
+
+\vfill
+\Title{Bottlenecks in precision top-quark measurements}
+\vfill
+\Author{ Valentina Vecchio}
+\Address{\institute}
+\vfill
+\begin{Abstract}
+%"Treatment of systematic uncertainties in precision top-quark measurements (including correlations in differential cross-sections among different distributions)”
+
+%Using the large data sample of Run-II LHC, the treatment of systematic uncertainties plays a crucial role in the precision era of the top quark measurements. Uncertainties can be determined in situ, profiled in the fit, externalised and/or determined from pseudo-experiments. A selected set of precise top quark measurements (cross section?, direct top mass?, top width?) from ATLAS and CMS is presented where justifications are provided and discussed for every treatment.
+
+The large data sample delivered by the Large Hadron Collider during its Run 2 opened to a new era of top-quark precision measurements. The treatment of the systematic uncertainties plays a crucial role in the determination of the cross-section and fundamental properties of the top-quark. A set of precise top quark measurements performed by the ATLAS and CMS experiments is presented, where the determination of systematic uncertainties is discussed.
+
+\end{Abstract}
+\vfill
+\begin{Presented}
+$13^\mathrm{th}$ International Workshop on Top Quark Physics\\
+Durham, UK (videoconference), 14--18 September, 2020
+\end{Presented}
+\vfill
+\end{titlepage}
+\def\thefootnote{\fnsymbol{footnote}}
+\setcounter{footnote}{0}
+%
+
+\section{Introduction}
+
+Recently, F.  A. Mesmer \index{Mesmer}
+has reported evidence of a profound influence of 
+magnets on a variety of aspects of human and animal physiology~\cite{Mesmer}.
+Numerous authors have claimed to reproduce certain of the phenomena 
+reported by Mesmer~\cite{diCenzo,Muller}, but there is little understanding
+of the precise mode of action of the magnetic influence.  In this
+article, I will present evidence that mesmeric influence can disrupt the
+lethal action of sodium cyanide (NaCN) when modulated by a sequence of 
+high-pitched tones.  After a description of the phenomenon, I will comment
+on the implications for the nature of the magnetic coupling.
+
+\section{Observations}
+
+My observations began when I was called on an emergency basis to aid two
+Albanian noblemen, Guglielmo B. and Ferrando di N., who had
+ingested the poison in an apparent attempt to commit suicide.  (The facts
+of the case were rather mysterious, since these young men had been seen in the 
+harbor earlier in the day, affecting a carefree attitude.  However, this 
+need not concern us here.)  The standard remedy would have been to induce
+vomiting; however, this would have offended the 
+sensibilities \index{sensibilities}  of two 
+noble ladies present, the daughters of the duke in whose household this 
+unfortunate incident took place.  Thus, I thought it wise to begin by 
+administering magneto-therapy using the devices that I had at hand.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%   use this format to include an .eps figure into your paper
+%%
+\begin{figure}[htb]
+\centering
+\includegraphics[height=1.5in]{magnet}
+\caption{Plan of the magnet used in the mesmeric studies.}
+\label{fig:magnet}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The source of magnetic influence used in this therapy was the simple
+iron pole magnet shown in Figure~\ref{fig:magnet}.  The device, roughly
+the size of human palm, was held three fingers' length away from each
+of the patients, while the blood cyanide level was monitored.  As this 
+operator proceeded in silence, only a very small effect on the poison was
+observed.  In a moment, however, the sisters began to weep and ululate
+in the most painful manner.  Under this blanket of sound, the effects of 
+the cyanide reaction were observed to be completely reversed.  Indeed,
+even before the end of a single session of treatment, the Albanians were
+seen to wake from their comas and offer thanks for their rescue.  Some
+sample blood cyanide levels are reported in Table~\ref{tab:blood}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%   use this format to include a LaTeX table  into your paper
+%%
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{l|ccc}  
+Patient &  Initial level($\mu$g/cc) &  w. Magnet &  
+w. Magnet and Sound \\ \hline
+ Guglielmo B.  &   0.12     &     0.10      &     0.001  \\
+ Ferrando di N. &  0.15     &     0.11      &  $< 0.0005$ \\ \hline
+\end{tabular}
+\caption{Blood cyanide levels for the two patients.}
+\label{tab:blood}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Interpretation}
+
+A description of these observations, obviously based on second-hand reports,
+has already been reported by L. da Ponte~\cite{daPonte}. \index{da Ponte}
+ In his paper,
+da Ponte attributes the mode of action of the magnetic force to direct
+magnetic attraction.  This would be implausible with the relatively small
+magnet used in this study; thus da Ponte was forced to propose an absurdly
+large size for the  magnetic device.  His theory does not account for the
+acoustic influence, which is known not to be present in magnetic action on
+inanimate objects.  A second hypothesis would state that the acoustic
+fields perturb the chemistry of the cyanide reactions, allowing the 
+reagents to couple magnetically.   As with the first hypothesis, we are
+skeptical, since again this phenomenon has no inorganic counterpart.  Thus,
+we are forced to conclude, with Mesmer, that magnetism couples directly to 
+the life force, which, as is well known, can be modulated by musical 
+influences.
+
+In conclusion, we note that the unusual mode of action of magnetism is only
+one of many which have been reported in the literature.  It is likely
+that there are further unusual magnetic phenomena to be discovered.  All
+studies to date have involved male patients.  But it is likely that the 
+prevailing belief that `women are all the same' would be overturned in a
+similar investigation.
+
+
+
+
+\Acknowledgements
+I am grateful to Don Alfonso d'Alba for certain services essential to 
+this investigation.
+
+
+
+\begin{thebibliography}{99}
+
+%%
+%%  bibliographic items can be constructed using the LaTeX format in SPIRES:
+%%    see    http://www.slac.stanford.edu/spires/hep/latex.html
+%%  SPIRES will also supply the CITATION line information; please include it.
+%%
+
+\bibitem{Mesmer}
+F. A. Mesmer, Proc. Wien. Acad. Sci. {\bf 13}, 1564, 1593 (1762).
+%%CITATION = PWASA,13,1564;%%
+
+\bibitem{diCenzo}
+A. L. di Cenzo, Trans. Acad. Ducal.  Milan., {\bf 23}, 2647 (1771).
+%%CITATION = TAADD,23,2647;%%
+
+\bibitem{Muller}
+For an exhaustive review of the Prussian literature, see A. D. M\"uller,
+in Workshop on Action at a Distance, F. Eisenschmidt, ed. (Springer,
+Berlin, 1774).
+
+\bibitem{daPonte}
+
+L. da Ponte, Trans. N. Y. Acad. Sci., {\bf 3}, 27 (1795).
+%%CITATION = TNYAA,3,27;%%
+
+
+\end{thebibliography}
+
+ 
+\end{document}
+
