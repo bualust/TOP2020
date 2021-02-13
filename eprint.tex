@@ -80,18 +80,28 @@ The \emph{top}-quark was observed for the first time in proton-antiproton ($p\ba
 \begin{equation}
 m_{\mathrm{top}} = 173.34 \pm 0.27(\mathrm{stat}) \pm 0.71(\mathrm{syst})~\mathrm{GeV}.
 \end{equation}
-Due to its large mass the \emph{top}-quark has the largest Yukawa coupling and its lifetime is smaller than the hadronisation time. From this latter fact, it derives that the \emph{top}-quark is never confined in bound states (\emph{hadrons}). This peculiarity offers the unique opportunity to study the properties of a ``free" quark.
+Due to its mass the \emph{top}-quark has the largest Yukawa coupling and its lifetime is smaller than the hadronisation time. From this latter fact, it derives that the \emph{top}-quark is never confined in bound states (\emph{hadrons}), offering the unique opportunity to study the properties of a ``free" quark.
 For these reasons, the \emph{top}-quark is considered to be a good probe to test the SM and beyond and, since the first observation, its properties have been studied in great detail, both at the Tevatron and the LHC.  
 At the LHC, \emph{top}-quarks are mainly produced in pairs of top-antitop ($t\bar{t}$) with a cross-section of around 800 $pb$ at $\sqrt{s}$=13 TeV.
-The large amount of \emph{top}-quarks produced at the LHC opened to a new era of precision measurements, where systematic uncertainties dominate the final results. Systematic uncertainties arise in all physics analyses where there exist uncertainties in the predictions of any of the Monte Carlo simulation steps. Uncertainties arising from the detector simulation are normally referred to as \emph{experimental}, whereas any uncertainty that arises in any of the other steps is usually classified as \emph{theoretical}. In the measurements reviewed in this work the main contribution to the systematic uncertainty is given by the theoretical component.
-The big impact of the theoretical uncertainties prompted the reaction of both the theoretical and experimental communities which in the last years realised higher older calculations and made use of data to tune the simulations.
+The large amount of \emph{top}-quarks produced at the LHC opened a new era of precision measurements, where systematic uncertainties dominate the final results. Systematic uncertainties arise in all physics analyses where there exist uncertainties in the predictions of any of the Monte Carlo simulation steps. Uncertainties arising from the detector simulation are normally referred to as \emph{experimental}, whereas any uncertainty that arises in any of the other steps is usually classified as \emph{theoretical}. In the measurements reviewed in this work the main contribution to the systematic uncertainty is given by the theoretical component.
+The big impact of the theoretical uncertainties prompted the reaction of both the theoretical and experimental comunities which in the last years released higher older calculations and made use of data to tune the simulations.
 Moreover, different techniques for the estimation of theoretical uncertainties have been developed. In this work, a set of precise \emph{top}-quark measurements performed by the ATLAS and CMS experiments is presented, where the different approaches for the systematic uncertainties estimation are compared and discussed.
-Two measurements of the inclusive cross-section of $t\bar{t}$ events which make use of a \emhp{Profile Likelihood Fit} are discussed. The different treatment of the systematic uncertainties 
+Two measurements of the inclusive cross-section of $t\bar{t}$ events which make use of a \emph{Profile Likelihood Fit} are discussed. Here, informations on the impact of systematic uncertainties can be extracted from data, the so-called \emph{profiling}, and different techniques are proposed. Morevover, several examples of differential cross-section measurementes are showed, where the derivation of the Covariance Matrix implies or not the usage of toy experiments. Finally, two examples of unfolding measurements in which systematic uncertainties are profiled are discussed. 
 
-\section{Treatment of systematic uncertainties in statistical analyses}
+\section{Systematic uncertainties in Profile Likelihood Fits}
+The measurement of the inclusive $t\bar{t}$ production cross-sections performed in the \emph{l+jets} final state by the ATLAS Collaboration \cite{Aad_2020} and in the \emph{dileptonic} final state by the CMS Collaboration \cite{CMS_inclusive} make use of Profile Likelihood Fit.
+In these analyses the inclusive cross-section is extracted from the data in a fiducial phase-space. The fiducial phase space is defined by the analysis requirements on the objects and the events. The cross-section estimated in the fiducial phace-space is proportinal to the inclusive cross-section
+\begin{equation}
+\sigma_{fid} = A_{fid} \cdot \sigma_{incl}, 
+\end{equation}
+where the acceptance $A_{fid}$ is defined as the ratio of $t\bar{t}$ events passing the fiducial region cuts.
+The extraction of the fiducial cross-section from data implies a Profile Likelihood Fit \cite{kCranmer}. 
 
+\section{Unfolding: definition of Covariance Matrix}
 
+\section{Combining unfolding and profiling}
 
+\section{Conclusions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -145,6 +155,19 @@ D0 Collaboration,``Observation of the top quark", {\em Physical Review Letters},
 
 \bibitem{atlas2014combination}
 T.~ATLAS, CDF, CMS, and D.~Collaborations,``First combination of Tevatron and LHC measurements of the top-quark mass", 2014.
+
+\bibitem{Aad_2020}
+ATLAS~Collaboration, ``Measurement of the $t\bar{t}$ production cross-section in the lepton+jets channel at $\sqrt{s}$=13 tev with the atlas experiment,''
+  {\em Physics Letters B}, vol.~810, p.~135797, Nov 2020.
+
+\bibitem{CMS_inclusive}
+CMS~Collaboration, ``Measurement of the $t\bar{t}$ production cross section, the top quark mass, and the strong coupling constant using dilepton events in pp collisions
+  at $\sqrt{s}$ = 13 TeV", {\em The European
+  Physical Journal C}, vol.~79, no.~5, p.~368, 2019.
+
+\bibitem{kCranmer}
+Kyle Cranmer, Practical Statistics for the, 2015
+
 
 
 \end{thebibliography}
