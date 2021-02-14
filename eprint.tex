@@ -3,6 +3,8 @@
 
 \documentclass[12pt]{article}
 \usepackage{graphicx}
+\usepackage{amssymb}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % basic data for the eprint:
@@ -89,13 +91,27 @@ Moreover, different techniques for the estimation of theoretical uncertainties h
 Two measurements of the inclusive cross-section of $t\bar{t}$ events which make use of a \emph{Profile Likelihood Fit} are discussed. Here, informations on the impact of systematic uncertainties can be extracted from data, the so-called \emph{profiling}, and different techniques are proposed. Morevover, several examples of differential cross-section measurementes are showed, where the derivation of the Covariance Matrix implies or not the usage of toy experiments. Finally, two examples of unfolding measurements in which systematic uncertainties are profiled are discussed. 
 
 \section{Systematic uncertainties in Profile Likelihood Fits}
-The measurement of the inclusive $t\bar{t}$ production cross-sections performed in the \emph{l+jets} final state by the ATLAS Collaboration \cite{Aad_2020} and in the \emph{dileptonic} final state by the CMS Collaboration \cite{CMS_inclusive} make use of Profile Likelihood Fit.
+In this section two measurements are discussed where a Profile Likelihood (PL) Fit is used.
+A Likelihood Fit is a statistical inference techniques where a prediction model of the variables under study is constructed. The probability of the observed data under this prediction model is what it is what is usually referred to as \emph{Likelihood}.
+A simple example is a counting experiment where the signal strenght $\mu$ of a process is extracted from the distribution of observed data. In this case, the signal (S) and background (B) events are assumed to follow a Poissonian distribution: the Likelihood of the observed data in a given bin \emph{i}, $n_i$, is
+\begin{equation}
+\mathcal{L}(n_i|\mu) = \mathcal{P}(n_i|\mu\cdot S_i+B_i)
+\end{equation}
+In this case, the signal strenght is the physics parameter of interest (POI) of the model. Eventually, other parameters can be added to a Likelihood Fit to account for any effect that might change the signal and/or background predictions. 
+These parameters are usually referred to as \emph{nuisance parameters} and often account for the effect of systematic uncertainties. When systematic uncertainties are added in the statistical model in the form of nuisance parameters $\theta$ they are said to be \emph{profiled}. The idea behind is that systematic uncertainties on the measurement of a POI come from imperfect knowledge of parameters of the model. It is a common practice to included systematic uncertainties in PL Fits as constrained nuisance parameters, where a some a priori knowledge is implied interpreted as "auxiliary/subsidiary measurement", implemented as constraint/penalty term. The penalty term is in the form of a probability density function: usually it is a Gaussian distribution, however also log-normal, gamma or uniform distributions can be used. 
+In the case of a Gaussian constraint, the form of the likelihood becomes 
+\begin{equation}
+\mathcal{L}(\mu,\vec{\theta}) = \displaystyle\prod_{i=1}^{\mathrm{bins}}\mathcal{P}(n_i|\mu\cdot S_i(\vec{\theta})+B_i(\vec{\theta}))\cdot\displaystyle\prod_{t=1}^{\mathrm{syst}}\mathcal{G}(\theta_t)
+\end{equation}
+
+ This statistical framework is largely used to estimate various \emph{top}-quark properties such as the inclusive cross-section \cite{Aad_2020,CMS_inclusive}, the width \cite{ATLAS:2019onj} of the mass \cite{CMS_inclusive}.  
+This work will focus on the the measurement of the inclusive $t\bar{t}$ production cross-sections performed in the \emph{lepton+jets} final state by the ATLAS Collaboration \cite{Aad_2020} and in the \emph{dileptonic} final state by the CMS Collaboration \cite{CMS_inclusive}. In both these measurements the inclusive cross-section is extracted by means of a PL fit: however, different strategies are implied on the estimation of the systematic uncertainties. 
 In these analyses the inclusive cross-section is extracted from the data in a fiducial phase-space. The fiducial phase space is defined by the analysis requirements on the objects and the events. The cross-section estimated in the fiducial phace-space is proportinal to the inclusive cross-section
 \begin{equation}
 \sigma_{fid} = A_{fid} \cdot \sigma_{incl}, 
 \end{equation}
-where the acceptance $A_{fid}$ is defined as the ratio of $t\bar{t}$ events passing the fiducial region cuts.
-The extraction of the fiducial cross-section from data implies a Profile Likelihood Fit \cite{kCranmer}. 
+where the acceptance $A_{fid}$ is defined as the ratio of $t\bar{t}$ events passing the fiducial region cuts over the total number of $t\bar{t}$ events.
+
 
 \section{Unfolding: definition of Covariance Matrix}
 
@@ -166,8 +182,11 @@ CMS~Collaboration, ``Measurement of the $t\bar{t}$ production cross section, the
   Physical Journal C}, vol.~79, no.~5, p.~368, 2019.
 
 \bibitem{kCranmer}
-Kyle Cranmer, Practical Statistics for the, 2015
+Kyle Cranmer, Practical Statistics for the LHC, 2015
 
+\bibitem{ATLAS:2019onj}
+``{Measurement of the top-quark decay width in top-quark pair events in the
+  dilepton channel at $\sqrt{s}=13$ TeV with the ATLAS detector},'' 8 2019.
 
 
 \end{thebibliography}
