@@ -105,6 +105,7 @@ In the case of a Gaussian constraint, the form of the likelihood becomes
 \end{equation}
 and the $\Delta\theta$ is interpreted as a Gaussian standard deviation.
 This PL statistical framework is largely used to estimate various \emph{top}-quark properties such as the inclusive cross-section \cite{Aad_2020,CMS_inclusive}, the width \cite{ATLAS:2019onj} and the mass \cite{CMS_inclusive}.
+
 \subsection{Profiling theoretical uncertainties}
 It has been mentioned how the penalty term of a NP is interpreted as a subsidiary measurement. In the case of experimental systematic uncertainties the quantity that might be mis-modelled is usually well defined and its parametrisation can be identically applied in the physics measurement. Moreover, the underlying information is often based on a dedicated calibration measurement of data. Examples are the reconstruction and identification efficiencies of the physics objetcs or the trigger efficiency. It is important to mention that, even though most experimental uncertainties are easier to treat in PL fits, their treatment might still deserve some level of caution. It might happen that the subsidiary measurement includes theoretical uncertainty which have a big impact in the POI estimation: their correlation should be carefully investigate.
 The scenario is different for theoretical uncertainties: for this category of uncertainties it is often unclear which and how many parameters encode the "true" systematic uncertainty. Moreover, the penalty term of theoretical uncertainties might not result from auxiliary measurements. For example, the uncertainty associated with the choice of the renormalisation and factorisation scales and missing-higher order calculations are not statistical. It follows that extra caution must be put in profiling theoretical uncertainties: any over-constrain must be carefully investigated and, where possible, multiple variations of the parametric model should be tested to assest any sensitivity to the a priori assumption.
@@ -112,23 +113,35 @@ At the LHC experiments, theoretical uncertainties are usually associate to pertu
 Finally, it is a good pratice to ensure that the over-constraint of a theoretical uncertainty has not been prompted by spurious statistical effects. 
 
 \subsection{Measurement of inclusive cross-section using PL Fit}
-This work will focus on the the measurement of the inclusive $t\bar{t}$ production cross-sections performed in the \emph{lepton+jets} final state by the ATLAS Collaboration \cite{Aad_2020} and in the \emph{dileptonic} final state by the CMS Collaboration \cite{CMS_inclusive}. In both these measurements the inclusive cross-section is extracted by means of a PL fit: however, different strategies are implied for the estimation of the systematic uncertainties. 
+This work will focus on the the measurement of the inclusive $t\bar{t}$ production cross-sections performed in the \emph{lepton+jets} final state by the ATLAS Collaboration \cite{Aad_2020} and in the \emph{dileptonic} final state by the CMS Collaboration \cite{CMS_inclusive}. In both these measurements a PL fit is implied: however, different strategies are used for the estimation of the systematic uncertainties. 
 In these analyses the inclusive cross-section is extracted from the data in a fiducial phase-space. The fiducial phase space is defined by the analysis requirements on the objects and the events. The cross-section estimated in the fiducial phace-space is proportional to the inclusive cross-section
 \begin{equation}
 \sigma_{\mathrm{fid}} = A_{\mathrm{fid}} \cdot \sigma_{\mathrm{incl}}, 
 \end{equation}
 where the acceptance $A_{\mathrm{fid}}$ is defined as the ratio of $t\bar{t}$ events passing the fiducial region cuts over the total number of $t\bar{t}$ events.
 The main difference between the two measurement is in the evaluation of the systematic uncertainties in the inclusive phase-space. 
-In \cite{Aad_2020} data events fulfilling the fiducial phase-space cuts are used to perform measurements of the difucial and inclusive $t\bar{t}$ cross-sections from the PL fit. For the $\sigma_{\mathrm{fid}}$ measurement, all samples of the simulated events used to evaluate the $t\bar{t}$ theoretical uncertainties are scaled to the same fiducial acceptance. 
+In \cite{Aad_2020} data events fulfilling the fiducial phase-space cuts are used to perform measurements of the fiducial and inclusive $t\bar{t}$ cross-sections from the PL fit. For the $\sigma_{\mathrm{fid}}$ measurement, all samples of the simulated events used to evaluate the $t\bar{t}$ theoretical uncertainties are scaled to the same fiducial acceptance. 
 The fiducial acceptance is evaluated using the nominal $t\bar{t}$ sample reweighted to match the \emph{top}-quark $p_T$ theoretical calculation to be consistent with the treatment of the alternative $t\bar{t}$ samples. The scaled distributions enter the fit to measure $\sigma_{\mathrm{fid}}$ reducing the impact of the theoretical uncertainties. For the $\sigma_{\mathrm{incl}}$ extraction, the \emph{top}-pair modelling uncertainties include the uncertainties corresponding to the extrapolation of each systematic uncertainty component to the full phase space. 
+Finally, the $\sigma_{\mathrm{incl}}$ is measured in a dedicated PL fit. This latter result is found to be compatible with the result obtained by extrapolating the $\sigma_{\mathrm{incl}}$ from the fiducial phase-space. Small differences in the central values arises from different assumptions made in evaluation of the theoretical uncertainties of $t\bar{t}$ prediction.
 
 On the other hand, in \cite{CMS_inclusive} the PL fit estimates $\sigma_{\mathrm{fid}}$ and its uncertainty. The total cross section is obtained by extrapolating the measured visible cross-section to the full phase space. The extrapolation uncertainty is determined for each relevant model systematic source fixing all nuisance parameters except the one under study to their post-fit values; the nuisance parameter is then set to values +1 and -1, and the variations of $A_{\mathrm{fid}}$ are recorded. The resulting variations of $\sigma_{\mathrm{incl}}$ with respect to the nominal value, obtained with the post-fit value of the NPs, are taken as the additional extrapolation uncertainties. The individual uncertainties in $\sigma_{\mathrm{incl}}$ from these sources are summed in quadrature to estimate the total systematic uncertainty.
 Another difference between \cite{Aad_2020} and \cite{CMS_inclusive} stands in the approach used for the luminosity uncertainty: while the ATLAS measurement includes the luminosity uncertainty as a NP of the PL fit, the CMS measurement externalised this contribution.
 In \cite{CMS_inclusive} most $t\bar{t}$ theoretical uncertainties show significant constraints with respect to their prior uncertainty, illustrating the strength of the analysis ansatz. The nuisance parameter for the $p_T$ distribution of the top quarks is pulled by one standard deviation. This is expected since it is known that the observed pT distribution of the top quark is softer than predicted by the simulation. An additional uncertainty is determined from pseudo-experiments to estimate the componenet of the NP constrain attributable to the Monte Carlo statistics: this ensures that the observed NPs constraints are not due to spurious effects.
 
 \section{Unfolding: definition of Covariance Matrix}
+Differential cross-sections are perfomed by means of \emph{unfolding} techniques. The main goal of unfolding techniques is to infer the true distribution of an observable from the reconstructed one, which is distorted due to detector effects, limited acceptance and finite resolution. 
+Several methods are available to unfold data distributions such as the Singular Value Decomposition (SVD) \cite{H_cker_1996}, the iterative Bayes-inspired regulatised unfolding \cite{DAGOSTINI1995487}, the iterative dynamically stabilised method (IDS) \cite{malaescu2009iterative} and the Fully Bayesian Unfolding \cite{choudalakis2012fully}. The choice of the method depends on the analysis aims and strategy. 
+This work will focus on the definition of the \emph{Covariance Matrix}. The Covariance Matrix is implied to quantify the agreement between the measured normalised unfolded distributions and the theoretical predictions, therefore a proper definition of the Covariance Matrix is crucial to test the available models. It is a common practice at the LHC experiments to define a $\chi^2$ as
+\begin{equation}
+\chi^2 = V^T_{N_{b-1}}\cdot\mathrm{Cov}^{-1}_{N_{b-1}}\cdot V_{N_{b-1}}
+\end{equation}
+where $V_{N_{b-1}}$ is the vector of the differences between the data and the prediction, $\mathrm{Cov}^{-1}_{N_{b-1}}$ is the sub-matrix derived from the full covariance matrix.
+The Covariance Matrix is usually expressed as the sum of two matrices: one including the statistical uncertainty, the experimental systematics and the background modelling, and a second one including the signal modelling uncertainties. 
+Independently on the number of unfolded variables, two examples are reported on how to evaluate the experimental systematics and the background modelling uncertainties.
+The first example is the measurement of the $t\bar{t}$ differential cross-section in the lepton+jets final state perfomed by the ATLAS experiment and documented in \cite{atlas_diffrential}. Here, toy experiments for both the statistical and systematic uncertainties are performed to evaluate the correlation matrix.
+The second example is the measurement of the $t\bar{t}$ normalised multi-differential cross-sections performed by the CMS experiment and documented in \cite{Sirunyan_2020}. In this measurement the difference between the systematic and nominal is takes as standard deviation: the correlation between bins is assested by looking at the systematic shits direction.
 
-\section{Combining unfolding and profiling}
+\section{Combining Unfolding and Profiling}
 
 \section{Conclusions}
 
@@ -202,7 +215,38 @@ Kyle Cranmer, Practical Statistics for the LHC, 2015
 ``{Measurement of the top-quark decay width in top-quark pair events in the
   dilepton channel at $\sqrt{s}=13$ TeV with the ATLAS detector},'' 8 2019.
 
+\bibitem{H_cker_1996}
+A.~Höcker and V.~Kartvelishvili, ``SVD approach to data unfolding,'' {\em
+  Nuclear Instruments and Methods in Physics Research Section A: Accelerators,
+  Spectrometers, Detectors and Associated Equipment}, vol.~372, p.~469–481,
+  Apr 1996.
 
+\bibitem{DAGOSTINI1995487}
+G.~D'Agostini, ``A multidimensional unfolding method based on Bayes' theorem,''
+  {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, vol.~362,
+  no.~2, pp.~487--498, 1995.
+
+\bibitem{malaescu2009iterative}
+B.~Malaescu, ``An iterative, dynamically stabilized method of data unfolding,''
+  2009.
+
+\bibitem{choudalakis2012fully}
+G.~Choudalakis, ``Fully bayesian unfolding,'' 2012.
+
+\bibitem{atlas_diffrential}
+ATLAS~Collaboration, ``Measurements of top-quark pair differential and
+  double-differential cross-sections in the l+jets channel with pp collisions at
+  $\sqrt{s}$ = 13 TeV using the ATLAS
+  detector,'' {\em The European Physical Journal C}, vol.~79, no.~12, p.~1028,
+  2019.
+
+\bibitem{Sirunyan_2020}
+CMS~Collaboration, ``Measurement of $t\bar{t}$ normalised
+  multi-differential cross sections in $pp$ collisions
+  at $\sqrt{s}$ = 13 TeV, and simultaneous determination of the
+  strong coupling strength, top quark pole mass, and parton distribution
+  functions,'' {\em The European Physical Journal C}, vol.~80, Jul 2020.
 \end{thebibliography}
 
  
