@@ -137,13 +137,23 @@ This work will focus on the definition of the \emph{Covariance Matrix}. The Cova
 \end{equation}
 where $V_{N_{b-1}}$ is the vector of the differences between the data and the prediction, $\mathrm{Cov}^{-1}_{N_{b-1}}$ is the sub-matrix derived from the full covariance matrix.
 The Covariance Matrix is usually expressed as the sum of two matrices: one including the statistical uncertainty, the experimental systematics and the background modelling, and a second one including the signal modelling uncertainties. 
-Independently on the number of unfolded variables, two examples are reported on how to evaluate the experimental systematics and the background modelling uncertainties.
+Two examples are reported on how to evaluate the experimental systematics and the background modelling uncertainties components of the Covariance Matrix.
 The first example is the measurement of the $t\bar{t}$ differential cross-section in the lepton+jets final state perfomed by the ATLAS experiment and documented in \cite{atlas_diffrential}. Here, toy experiments for both the statistical and systematic uncertainties are performed to evaluate the correlation matrix.
 The second example is the measurement of the $t\bar{t}$ normalised multi-differential cross-sections performed by the CMS experiment and documented in \cite{Sirunyan_2020}. In this measurement the difference between the systematic and nominal is takes as standard deviation: the correlation between bins is assested by looking at the systematic shits direction.
+It is interesting to notice how these approaches are independent on the number of unfolded variables.
+Similarly to what has been discussed for \cite{atlas_diffrential}, the measurement of the differential $t\bar{t}$ cross-section in the dilepton final state reported in \cite{atlas_diff_dilep} uses pseudo-experiments to evaulte the statistical correlation between the unfolded distributions. In this measurement the systematic uncertainties are assumed to be correlated between the different distributions. 
+In the measurement of the \emph{top}-quark spin correlation and polarisation performed by the CMS experiment \cite{PhysRevD.100.072002}, different variables are unfolded to measure the spin correlation and polarisation coefficients. The systematic Covariance Matrices are derived by looking to shifts direction and assigning a $\pm100\%$ correlation between bins of different distributions.
+A new method for the calculation of the modelling Covariance Matrix is reported in \cite{allhad_atlas}. This method is found to improve the p-value results in some variables. It consists of deriving the signal modelling shifts using the expected relative variations from the associated systematic uncertainty to scale each bin of the Poisson-fluctuated distribution unfolded with nominal corrections.
 
 \section{Combining Unfolding and Profiling}
+In the previous section, among the unfolding method, the Fully Bayesian Unfolding has been mentioned. This method allows to perform a measurement of a differential cross-section, where systematic uncertainties are profiled within the unfolding procedure. 
+The main idea is to perform a PL fit comparing the data to the prediction, espressed as a function of the migration matrix and the true distribution. This method does not involve an expliciti matrix inverions and the prior choice determines the bias. Finally, it implies an automatic handling of the systematic uncertainties and correlations.
+The Fully Bayesian Unfolding has been used in the $t\bar{t}$ differential cross-section in the dileptonic final state performed by the CMS experiment \cite{2020135263}. In this measurement the unfoldinf problem was found to be well-conditioned and therefore no regularisation was needed. 
+The result of the measurement show a clear improvement of the uncertainty of the unfolded distribution of the $t\bar{t}$ system ($M(t\bar{t})$). If compared to the previous result \cite{CMS_diff_to_compare}, derived using the same data set but without profilinf the uncertainties, the uncertainty on each bin of the unfolded distribution is found to be smaller.
+The Fully Bayesian Unfolding technique was used also in the determination of the $t\bar{t}$ asymmetry production performed by the ATLAS experiment \cite{ATLAS-CONF-2019-026}. In this measurement the asymmetry is estimated simultaneously from different signal regions, exploiting the ability of PL fit to use the informations of different phase spaces. Morevoer, a significant improvement of the pre-fit and post-fit uncertainty is shown, proving again the strenght brought by the combination of unfolding and profiling. 
 
 \section{Conclusions}
+The ATLAS and CMS Collaborations have produced high precision \emph{top}-quark measurements at $\sqrt{s}$ = 13 TeV using collision data from the LHC. The different approaches implied for the estimation of systematic uncertainties in inclusive cross-section measurements have been discussed. Additionally, the methods for the derivation of the Covariance Matrix in the measurement of differential cross-sections have been shown. Finally, the first results from the combination of unfolding and profiling has shown how this method succefully delivers measurements with an improved systematic uncertainty.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -247,8 +257,38 @@ CMS~Collaboration, ``Measurement of $t\bar{t}$ normalised
   at $\sqrt{s}$ = 13 TeV, and simultaneous determination of the
   strong coupling strength, top quark pole mass, and parton distribution
   functions,'' {\em The European Physical Journal C}, vol.~80, Jul 2020.
-\end{thebibliography}
 
+\bibitem{atlas_diff_dilep}
+ATLAS~Collaboration, ``Measurement of the $t\bar{t}$ production cross-section and
+  lepton differential distributions in $e\mu$ dilepton events from pp
+  collisions at $\sqrt{s}$ = 13 tev with the atlas detector,'' {\em The
+  European Physical Journal C}, vol.~80, no.~6, p.~528, 2020.
+
+\bibitem{PhysRevD.100.072002}
+CMS~Collaboration, ``Measurement of the top quark polarization and $t\bar{t}$
+  spin correlations using dilepton final states in proton-proton collisions at
+  $\sqrt{s}$ = 13 TeV,'' {\em Phys. Rev. D}, vol.~100, p.~072002, Oct 2019.
  
+\bibitem{allhad_atlas}
+ATLAS~Collaboration, ``Measurements of top-quark pair single- and
+  double-differential cross-sections in the all-hadronic channel in pp
+  collisions at $\sqrt{s}$ = 13 TeV using the atlas detector,'' {\em Journal of
+  High Energy Physics}, vol.~2021, no.~1, p.~33, 2021.
+
+\bibitem{2020135263}
+CMS~Collaboration, ``Running of the top quark mass from proton-proton
+  collisions at s=13tev,'' {\em Physics Letters B}, vol.~803, p.~135263, 2020.
+
+\bibitem{CMS_diff_to_compare}
+CMS~Collaboration, ``Measurements of $t\bar{t}$ differential cross sections in proton-proton collisions at
+  $\sqrt{s}$ = 13 TeV using events containing two leptons,'' {\em Journal of High
+  Energy Physics}, vol.~2019, no.~2, p.~149, 2019.
+
+\bibitem{ATLAS-CONF-2019-026}
+``{Inclusive and differential measurement of the charge asymmetry in $t\bar{t}$
+  events at 13 TeV with the ATLAS detector},'' Tech. Rep. ATLAS-CONF-2019-026,
+  CERN, Geneva, Jul 2019.
+
+\end{thebibliography}
 \end{document}
 
